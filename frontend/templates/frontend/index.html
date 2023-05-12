@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>End-To-End</title>
+    {% load static %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+    />
+    <link rel="stylesheet" type="text/css" href="{% static "css/index.css" %}"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+
+    <link rel="stylesheet"href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+  </head>
+  <body>
+   
+    <div id="main">
+      <div>
+        
+      <div>
+      <div id="app">
+
+      </div>
+    </div>
+
+    <script src="{% static "frontend/main.js" %}"></script>
+    <script async defer>
+      
+      const targetElement = document.getElementById("fresh");
+
+      // add a scroll event listener to the window
+      window.addEventListener('scroll', function() {
+        // check the current scroll position
+        const scrollPosition = window.scrollY;
+
+        // update the ID of the target element based on the scroll position
+        if (scrollPosition > 0) {
+          targetElement.setAttribute("id", "sticky");
+        } 
+        else{
+          targetElement.setAttribute("id", "fresh");
+        }
+      });
+
+      let menu = document.querySelector('#menu-icon');
+      let navmenu = document.querySelector('.navmenu');
+
+      menu.onclick = () => {
+        menu.classList.toggle('bx-x');
+        navmenu.classList.toggle('open');
+      }
+      
+    </script>
+    
+  </body>
+</html>
